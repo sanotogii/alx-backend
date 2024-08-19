@@ -33,7 +33,7 @@ class Server:
         Return a specific page of the dataset based on page
         number and page size.
         """
-        assert isinstance(page, int) and isinstance(page_size, float)
+        assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
 
         start_index, end_index = self.index_range(page, page_size)
