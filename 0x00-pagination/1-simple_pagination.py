@@ -23,8 +23,7 @@ class Server:
 
         return self.__dataset
 
-
-    def index_range(self,page: int, page_size: int) -> Tuple[int, int]:
+    def index_range(self, page: int, page_size: int) -> Tuple[int, int]:
         """
         returns a tuple of size two
         """
@@ -38,7 +37,7 @@ class Server:
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
-        start_index, end_index = index_range(page, page_size)
+        start_index, end_index = self.index_range(page, page_size)
         if start_index >= len(self.dataset()):
             return []
         return self.dataset()[start_index:end_index]
