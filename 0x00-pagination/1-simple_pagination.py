@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import csv
+import math
 from typing import List, Tuple
 
 
@@ -33,10 +34,12 @@ class Server:
         Return a specific page of the dataset based on page
         number and page size.
         """
-        assert isinstance(page, int) and isinstance(page_size, int)
+        assert isinstance(page, int) and isinstance(page_size, float)
         assert page > 0 and page_size > 0
 
-        start_index, end_index = self.index_range(page, page_size)
+        rounded_page_size = round(page_size)
+
+        start_index, end_index = self.index_range(page, rounded_page_size)
         try:
             return self.dataset()[start_index:end_index]
         except IndexError:
