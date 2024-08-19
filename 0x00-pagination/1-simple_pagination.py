@@ -37,6 +37,8 @@ class Server:
         assert page > 0 and page_size > 0
 
         start_index, end_index = self.index_range(page, page_size)
-        if end_index > len(self.dataset()):
+        try:
+            start, end = self.index_range(page, page_size)
+            return self.dataset()[start:end]
+        except IndexError:
             return []
-        return self.dataset()[start_index:end_index]
