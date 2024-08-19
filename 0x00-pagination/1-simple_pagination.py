@@ -33,8 +33,8 @@ class Server:
         Return a specific page of the dataset based on page
         number and page size.
         """
-        assert isinstance(page, int) and page > 0
-        assert isinstance(page_size, int) and page_size > 0
+        assert isinstance(page, int) and isinstance(page_size, int)
+        assert page > 0 and page_size > 0
 
         start_index, end_index = self.index_range(page, page_size)
         if end_index > len(self.dataset()):
