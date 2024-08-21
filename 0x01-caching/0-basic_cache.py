@@ -9,8 +9,6 @@ class BasicCache(BaseCaching):
     """
     basic caching system with no size limit
     """
-    def __init__(self):
-        super().__init__()
 
     def put(self, key, item):
         """
