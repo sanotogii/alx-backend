@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from base_caching import BaseCaching
+BaseCaching = __import__("base_caching").BaseCaching
 """
 basic caching system with no size limit
 """
