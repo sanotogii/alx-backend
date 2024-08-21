@@ -9,6 +9,8 @@ class BasicCache(BaseCaching):
     """
     basic caching system with no size limit
     """
+    def __init__(self):
+        super().__init__()
 
     def put(self, key, item):
         """
@@ -23,4 +25,6 @@ class BasicCache(BaseCaching):
         """
         Get an item by key
         """
+        if key is None:
+            return None
         return self.cache_data.get(key)
