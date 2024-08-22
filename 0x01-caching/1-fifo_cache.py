@@ -4,6 +4,7 @@ FIFO caching system
 """
 from base_caching import BaseCaching
 
+
 class FIFOCache(BaseCaching):
     """
     FIFO cashing system
@@ -11,7 +12,7 @@ class FIFOCache(BaseCaching):
 
     def __init__(self):
         super().__init__()
-    
+
     def put(self, key, item):
         """
         add an item in the cache
