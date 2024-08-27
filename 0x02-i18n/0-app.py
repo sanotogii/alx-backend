@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route('/0-index.html')
-def hello_world():
+def hello_world() -> str:
     """
     This function renders the
     0-index.html file
